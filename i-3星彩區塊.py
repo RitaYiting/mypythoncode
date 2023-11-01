@@ -34,8 +34,8 @@ print(needtime +':')
 
 
 number = result_3star.find_all('div',{'class':'ball_tx ball_purple'})
-
+print('中獎號碼:', end='')
 for n in number:
-    print('中獎號碼:',n.text,end=',')
+    print(n.text,end=',')
     
 
