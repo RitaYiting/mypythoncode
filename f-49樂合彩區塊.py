@@ -22,7 +22,7 @@ data = requests.get(url, headers = header).text
 soup = BeautifulSoup(data,'html.parser')
 # print(soup)
 
-print('***************大樂透區塊***************')
+print('***************49樂合彩區塊***************')
 
 result = soup.find_all('div',{'class':'contents_box02'})
 result3 = result[3]
@@ -36,27 +36,16 @@ print(needtime +':')
 str_number = result3.find_all('div',{'class':'ball_tx ball_yellow'})[0:6]
 # print(str_number)
 
-# special_number = result3.find('div',{'class':'ball_red'}).text
-
-
-# str_number(str格式)轉成整數(int),為了做後面排序
-int_number = [int(n.text) for n in str_number]
-                #把str_number裡的數字,各別抓出,並轉成int
-
 
 print('開出順序:',end='')
-for n in int_number: #把轉成整數的號碼一個一個抓出來   
-    print(n,end=',')
+for n in str_number: 
+    print(n.text.replace(' ',''),end=',')
 print()
 print()    
 
-#把int_number遞增排序
-sorted_numbers = sorted(int_number)
-# print(sorted_numbers)
 
 print('大小順序:', end='')
-for n1 in sorted_numbers: #排序完後,再一個一個抓出來
-    print(n1, end=',')
-print()
-print()
+sort_number = result3.find_all('div',{'class':'ball_tx ball_yellow'})[6:12]
+for n2 in sort_number:
+    print(n2.text.replace(' ',''),end=',')
 
