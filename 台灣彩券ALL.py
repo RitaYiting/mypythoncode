@@ -28,9 +28,9 @@ print('***************BINGO BINGO**************')
 result = soup.find('div',{'class':'contents_box01'})
 # print(result)
 
-needtime = result.find('span',{'class':'font_black15'}).text #印出來是日期、彩券期別
+needtime = result.find('span',{'class':'font_black15'}).text #印出來是'日期、彩券期別'
  
-end = result.find('a').text #印出來是開獎結果
+end = result.find('a').text #印出來是'開獎結果'
 print(needtime + end +':')
 
 # 去除字符串中的空格,取代為','
@@ -55,14 +55,14 @@ print('***************雙贏彩區塊***************')
 result = soup.find('div',{'class':'contents_box06'})
 # print(result)
 
-needtime = result.find('div',{'class':'contents_mine_tx09'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result.find('div',{'class':'contents_mine_tx09'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 print()
 
 str_number = result.find_all('div',{'class':'ball_tx ball_blue'})[0:12]
 
 print('開出順序:',end='')
-for n in str_number: #把轉成整數的號碼一個一個抓出來   
+for n in str_number:    
     print(n.text.replace(' ',''),end=',')
 print()    
 print()
@@ -79,7 +79,7 @@ print('***************威力彩區塊***************')
 result = soup.find('div',{'class':'contents_box02'})
 # print(result)
 
-needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 str_number = result.find_all('div',{'class':'ball_tx ball_green'})[0:6]
@@ -87,7 +87,7 @@ str_number = result.find_all('div',{'class':'ball_tx ball_green'})[0:6]
 sec_number = result.find('div',{'class':'ball_red'}).text
 
 print('開出順序:',end='')
-for n in str_number: #把轉成整數的號碼一個一個抓出來   
+for n in str_number:   
     print(n.text.replace(' ',''),end=',')
 print()    
 print()
@@ -108,7 +108,7 @@ print('***************38樂合彩區塊***************')
 result = soup.find('div',{'class':'contents_box02'})
 # print(result)
 
-needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 str_number = result.find_all('div',{'class':'ball_tx ball_green'})[0:6]
@@ -116,7 +116,7 @@ str_number = result.find_all('div',{'class':'ball_tx ball_green'})[0:6]
 sec_number = result.find('div',{'class':'ball_red'}).text
 
 print('開出順序:',end='')
-for n in str_number: #把轉成整數的號碼一個一個抓出來   
+for n in str_number:   
     print(n.text.replace(' ',''),end=',')
 print()    
 print()
@@ -134,7 +134,7 @@ print('***************大樂透區塊***************')
 result = soup.find_all('div',{'class':'contents_box02'})
 result3 = result[2]
 
-needtime = result3.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result3.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 str_number = result3.find_all('div',{'class':'ball_tx ball_yellow'})[0:6]
@@ -165,7 +165,7 @@ result3 = result[3]
 # print(result3)
 
 
-needtime = result3.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result3.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 
@@ -192,7 +192,7 @@ print('**************今彩539區塊**************')
 result = soup.find('div',{'class':'contents_box03'})
 # print(result)
 
-needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 
@@ -218,7 +218,7 @@ print('**************39樂合彩區塊**************')
 result = soup.find('div',{'class':'contents_box03'})
 # print(result)
 
-needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 
@@ -247,7 +247,7 @@ result_3star = result[0]
 # print(result3)
 
 
-needtime = result_3star.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result_3star.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 
@@ -265,7 +265,7 @@ result_3star = result[1]
 # print(result3)
 
 
-needtime = result_3star.find('div',{'class':'contents_mine_tx02'}).text #印出來是日期、彩券期別、開獎結果
+needtime = result_3star.find('div',{'class':'contents_mine_tx02'}).text #印出來是'日期、彩券期別、開獎結果'
 print(needtime +':')
 
 
