@@ -32,7 +32,7 @@ needtime = result.find('span',{'class':'font_black15'}).text #印出來是日期
 end = result.find('a').text #印出來是開獎結果
 print(needtime + end +':')
 
-# 把str格式的開出獎號轉為int整數整式  # 並去除字符串中的空格,取代為','
+# 去除字符串中的空格,取代為','
 bingo_number = result.find('div',{'class':'ball_box01'}).text.replace(' ',',')
 print('開出獎號:'+bingo_number) 
 print()
