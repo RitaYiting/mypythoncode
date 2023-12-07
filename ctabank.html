@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三信商銀匯率查詢</title>
+    <link rel="stylesheet" href="static\css\cta.css">
+
+</head>
+<body>
+    <h1>三信商銀 匯率</h1>
+    <div id="area">
+        <div class="formType">
+            <table>
+                <tr>
+                    <th>幣別名稱</th>
+                    <th>現金買入</th>
+                    <th>現金賣出</th>
+                    <th>即期買入</th>
+                    <th>即期賣出</th>          
+                </tr>
+            
+                <tbody>                    
+                        {% for row in rates %}
+                    <tr>
+                        <td>{{row.currency}}</td>
+                        <td>{{row.mbuy}}</td>
+                        <td>{{row.msell}}</td>
+                        <td>{{row.realbuy}}</td>
+                        <td>{{row.realsell}}</td>
+                    </tr>
+                        {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p style="text-align: center;">資料來源: 三信商銀 https://www.cotabank.com.tw/web/interest_3/</p>
+</footer>
+</html>
